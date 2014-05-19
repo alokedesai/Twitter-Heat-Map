@@ -1,0 +1,16 @@
+{
+  "name": "heat_map",
+  "version": "0.0.1",
+  "private": true,
+    "dependencies": {
+    "express": "~4.2.0",
+    "morgan": "~1.0.0",
+    "cookie-parser": "~1.0.1",
+    "body-parser": "~1.0.0",
+    "debug": "~0.7.4",
+    "ntwitter": "0.5.0", 
+    "socket.io" : "latest",
+    "socket.io-client" : "latest",   
+    "jade" : "latest"
+ }
+}
