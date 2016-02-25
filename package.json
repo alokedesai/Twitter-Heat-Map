@@ -2,15 +2,19 @@
   "name": "heat_map",
   "version": "0.0.1",
   "private": true,
-    "dependencies": {
-    "express": "~4.2.0",
-    "morgan": "~1.0.0",
-    "cookie-parser": "~1.0.1",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
     "body-parser": "~1.0.0",
+    "cfenv": "^1.0.3",
+    "cookie-parser": "~1.0.1",
     "debug": "~0.7.4",
-    "ntwitter": "0.5.0", 
-    "socket.io" : "latest",
-    "socket.io-client" : "latest",   
-    "jade" : "latest"
- }
+    "express": "~4.2.0",
+    "jade": "latest",
+    "morgan": "~1.0.0",
+    "ntwitter": "0.5.0",
+    "socket.io": "latest",
+    "socket.io-client": "latest"
+  }
 }
