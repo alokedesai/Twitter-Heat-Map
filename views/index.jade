@@ -48,8 +48,7 @@ html
       var host = '#{host}' // this comes from res.render(...)
       var port = '#{port}' // this comes from res.render(...)
       console.log('connecting to server:', 'host', host, 'port', port)
-
-      var serverUrl = `http://${host}:${port}` //es6 template strings
+      var serverUrl = 'http://'+host+':'+port //es6 template strings
       var socket = io.connect(serverUrl);
       //- add the data baesd on the coordinates from the front end
       socket.on("locale", function(data) {
