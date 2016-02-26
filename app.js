@@ -32,6 +32,8 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/favicon.ico', (req, res) => res.status(404).send('not found'))
+
 app.use('/', routes);
 
 // twitter streaming
