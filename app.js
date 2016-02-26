@@ -13,10 +13,9 @@ var server = http.createServer(app);
 var cfenv = require('cfenv');
 var appEnv = cfenv.getAppEnv();
 var port = appEnv.port;
-var host = '0.0.0.0'
-console.log(host, port)
+var host = appEnv.bind
 
-server.listen(port, host, () => console.log(`server listening on ${host}:${port}`));
+server.listen(port, host, () => console.log(`server listening on ${appEnv.url}`));
 
 var io = require('socket.io').listen(server);
 var twitter = require("ntwitter");
