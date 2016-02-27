@@ -9,7 +9,13 @@ var app = express();
 
 var http = require("http");
 var server = http.createServer(app);
-server.listen(3000);
+
+var cfenv = require('cfenv');
+var appEnv = cfenv.getAppEnv();
+var port = appEnv.port;
+var host = appEnv.bind
+
+server.listen(port, host, () => console.log(`server listening on ${appEnv.url}`));
 
 var io = require('socket.io').listen(server);
 var twitter = require("ntwitter");
@@ -25,11 +31,13 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/favicon.ico', (req, res) => res.status(404).send('not found'))
+
 app.use('/', routes);
 
 // twitter streaming
 io.sockets.on("connection", function(socket) {
-   
+
     var twit = new twitter({
     consumer_key: 'qRUEbvTQQ5fghgelqOtRdvGrU',
     consumer_secret: 'yPhAM53a9qRHPYFXePy8jotyT7D1gJEcCIEjCxkJvGsvNbTbhE',
@@ -52,8 +60,8 @@ io.sockets.on("connection", function(socket) {
         else {
             twit.currentTwitStream.destroy();
         }
-        
-    }); 
+
+    });
 });
 
 
